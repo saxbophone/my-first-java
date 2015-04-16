@@ -1,9 +1,9 @@
 public class AccountDemo {
     public static void main(String[] args) {
-        Account myAccount = new Account();
-        Account myOtherAccount = new Account();
-        myAccount.setBalance(100);
-        myOtherAccount.setBalance(2000);
+        Account myAccount = new Account("Joshua Saxby", 100);
+        Account myOtherAccount = new Account("Saxbophone", 2000);
+        myAccount.getBalance();
+        myOtherAccount.getBalance();
         transfer(myAccount, myOtherAccount, 80.0);
         myAccount.getBalance();
         myOtherAccount.getBalance();

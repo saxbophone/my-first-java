@@ -1,12 +1,19 @@
 public class Account {
-    int accountNo = 0;
-    double balance = 0.0;
-    String owner = " ";
+    int accountNo;
+    double balance;
+    String owner;
+    static int accountCounter = 0;
 
-    public void Account() {
-        accountNo = 0;
+    public Account() {
+        accountNo = ++accountCounter;
+        owner = "";
         balance = 0.0;
-        owner = " ";
+    }
+
+    public Account(String own, double bal) {
+        accountNo = ++accountCounter;
+        owner = own;
+        balance = bal;
     }
 
     public void setAccountNo(int accNo) {
