@@ -25,12 +25,10 @@ public class Account {
     }
 
     public void setBalance(double bal) {
-        System.out.println("Set balance of account " + accountNo + " to " + bal);
         balance = bal;
     }
 
     public double getBalance() {
-        System.out.println("Balance of account " + accountNo + " is " + balance);
         return balance;
     }
 
