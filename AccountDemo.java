@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class AccountDemo {
     public static void main(String[] args) {
-        Account myAccount = new Account("Joshua Saxby", 0.0);
+        Account myAccount = new Account("Joshua Saxby");
         Scanner keyboard = new Scanner(System.in);
         while (true) {
             runInterface(keyboard, myAccount);
@@ -22,7 +22,7 @@ public class AccountDemo {
         System.out.println("1 - Show Account Balance");
         System.out.println("2 - Make a Withdrawal");
         System.out.println("3 - Make a Deposit");
-        System.out.println("4 - Show account Info");
+        System.out.println("4 - Show Account Info");
         System.out.println("===============================");
         System.out.print("Choice: ");
         int choice = input.nextInt();

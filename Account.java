@@ -6,7 +6,13 @@ public class Account {
 
     public Account() {
         accountNo = ++accountCounter;
-        owner = "";
+        owner = "Account #" + accountNo;
+        balance = 0.0;
+    }
+
+    public Account(String own) {
+        accountNo = ++accountCounter;
+        owner = own;
         balance = 0.0;
     }
 
