@@ -23,6 +23,8 @@ public class AccountDemo {
         System.out.println("2 - Make a Withdrawal");
         System.out.println("3 - Make a Deposit");
         System.out.println("4 - Show Account Info");
+        System.out.println("5 - Print Account Info");
+        System.out.println("6 - Exit this screen.");
         System.out.println("===============================");
         System.out.print("Choice: ");
         int choice = input.nextInt();
@@ -35,7 +37,10 @@ public class AccountDemo {
             case 2:
                 System.out.print("Enter Amount to Withdraw: ");
                 dd = input.nextDouble();
-                acc.withdraw(dd);
+                byte sucess = acc.withdraw(dd);
+                if (sucess == 1) {
+                    System.out.print("Sorry, you do not have enough funds to make this Withdrawal.\n");
+                }
                 break;
             case 3:
                 System.out.print("Enter Amount to Deposit: ");
@@ -45,6 +50,20 @@ public class AccountDemo {
             case 4:
                 System.out.println("Showing information for account number " + acc.accountNo + ":");
                 System.out.println("Name of account Holder: " + acc.owner);
+                break;
+            case 5:
+                System.out.println("Saving Bank Account details to file...");
+                byte saved = acc.fileWrite();
+                if (saved == 0) {
+                    System.out.println("Sucess!");
+                }
+                else {
+                    System.out.println("Failed!");
+                }
+                break;
+            case 6:
+                System.out.println("Thank you for Banking with Ultra Mega Corp Ltd");
+                System.exit(0);
                 break;
             default:
                 System.out.println("Invalid Option!");

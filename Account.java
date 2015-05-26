@@ -1,3 +1,6 @@
+import java.io.*;
+
+
 public class Account {
     int accountNo;
     double balance;
@@ -50,7 +53,28 @@ public class Account {
         balance += amount;
     }
 
-    public void withdraw(double amount) {
-        balance -= amount;
+    public byte withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            return 0;
+        }
+        else {
+            return 1;
+        }
+    }
+
+    public byte fileWrite() {
+        String fileName = "accountInfo.txt";
+        String output = "Account Holder: " + owner + "\n" + "Balance: " + balance + "\n";
+        try {
+            FileWriter writer = new FileWriter(fileName);
+            PrintWriter printer = new PrintWriter(writer);
+            printer.print(output);
+            printer.close();
+            return 0;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return 1;
+        }
     }
 }
